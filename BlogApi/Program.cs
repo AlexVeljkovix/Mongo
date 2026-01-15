@@ -7,29 +7,21 @@ using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//debugiranje
-builder.Logging.ClearProviders();
-builder.Logging.AddConsole();
-builder.Logging.AddDebug();
-builder.Logging.SetMinimumLevel(LogLevel.Debug);
-
 //mongo kontekst
 builder.Services.AddSingleton<MongoDbContextService>();
 
 //repos
 builder.Services.AddScoped<PostRepo>();
 builder.Services.AddScoped<CommentRepo>();
+builder.Services.AddScoped<UserRepo>();
 
 // serivis
 builder.Services.AddScoped<PostService>();
 builder.Services.AddScoped<CommentService>();
-builder.Services.AddScoped<UserRepo>();
 builder.Services.AddScoped<AuthService>();
 
 //context access
 builder.Services.AddHttpContextAccessor();
-
-
 
 //kontroleri
 builder.Services.AddControllers();
@@ -51,34 +43,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ),
             NameClaimType = ClaimTypes.Name,
             RoleClaimType = ClaimTypes.Role
-        };
-        
-        options.Events = new JwtBearerEvents
-        {
-            OnAuthenticationFailed = context =>
-            {
-                Console.WriteLine($"=== JWT AUTH FAILED ===");
-                Console.WriteLine($"Exception: {context.Exception.Message}");
-                Console.WriteLine($"Exception Type: {context.Exception.GetType().Name}");
-                
-                if (context.Exception is SecurityTokenExpiredException)
-                    Console.WriteLine("Token is expired");
-                else if (context.Exception is SecurityTokenInvalidSignatureException)
-                    Console.WriteLine("Invalid signature");
-                else if (context.Exception is SecurityTokenInvalidIssuerException)
-                    Console.WriteLine("Invalid issuer");
-                    
-                Console.WriteLine($"=== END JWT AUTH FAILED ===");
-                return Task.CompletedTask;
-            },
-            OnTokenValidated = context =>
-            {
-                Console.WriteLine("=== JWT TOKEN VALIDATED ===");
-                var user = context.Principal;
-                Console.WriteLine($"User authenticated: {user?.Identity?.Name}");
-                Console.WriteLine($"=== END JWT TOKEN VALIDATED ===");
-                return Task.CompletedTask;
-            }
         };
     });
 
@@ -106,7 +70,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
 
 app.UseAuthentication();
 app.UseAuthorization();

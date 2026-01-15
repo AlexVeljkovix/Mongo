@@ -72,11 +72,12 @@ function EditCommentPage() {
                 <h2 className="section-title">Edit comment</h2>
 
                 <form className="form" onSubmit={handleSubmit}>
+                    <label className="form-label">Comment content:</label>
                     <textarea
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
-                        rows={5}
-                        style={{ width: '100%', marginBottom: 10 }}
+                        className="textarea-large"
+                        placeholder="Your comment..."
                     />
 
                     <button className="btn btn-primary" type="submit">

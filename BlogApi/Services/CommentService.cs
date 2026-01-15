@@ -40,21 +40,17 @@ public class CommentService
 
         await _comments.CreateAsync( comment);
         await _posts.IncrementCommentsCount(postId, 1);
-
-        // var comment = new Comment
-        // {
-        //     PostId = postId,
-        //     AuthorId = authorId,
-        //     Content = content
-        // };
-
-        
-        // await _comments.CreateAsync(comment);
-        // await _posts.IncrementCommentsCount(postId, 1);
     }
 
-    // public Task<bool> UpdateCommentAsync(string id, string content)
-    //     => _comments.UpdateCommentAsync(id, content);
+    public Task<List<Comment>> GetByPostIdAsync(string postId)
+        => _comments.GetCommentsByPostIdAsync(postId);
+
+    public Task<List<Comment>> GetByAuthorIdAsync(string authorId) 
+        => _comments.GetCommentsByAuthorIdAsync(authorId);
+
+    public Task<Comment?> GetByCommentIdAsync(string commentId) 
+        => _comments.GetByIdAsync(commentId);
+
     public async Task<bool> UpdateCommentAsync(
         string commentId,
         string userId,
@@ -70,17 +66,6 @@ public class CommentService
         return await _comments.UpdateCommentAsync(commentId, content);
     }
 
-
-    public Task<List<Comment>> GetByPostIdAsync(string postId)
-        => _comments.GetCommentsByPostIdAsync(postId);
-
-    public Task<List<Comment>> GetByAuthorIdASync(string authorId) 
-        => _comments.GetCommentsByAuthorIdAsync(authorId);
-
-    public Task<Comment?> GetByCommentIdAsync(string commentId) 
-        => _comments.GetByIdAsync(commentId);
-
- 
     public async Task<bool> DeleteCommentAsync(
         string commentId,
         string userId
@@ -98,5 +83,4 @@ public class CommentService
         await _posts.IncrementCommentsCount(comment.PostId!, -1);
         return true;
     }
-
 }

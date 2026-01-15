@@ -7,6 +7,7 @@ function Header() {
     const [searchParams, setSearchParams] = useSearchParams()
     const navigate = useNavigate()
     const { user, logout } = useAuth()
+    const [open, setOpen] = useState(false)
 
     const activeSearch = searchParams.get('search') ?? ''
     const [inputSearch, setInputSearch] = useState(activeSearch)
@@ -40,7 +41,7 @@ function Header() {
             <header>
                 <div className="header-inner">
                     <Link to="/" style={{ ftonWeight: 'bold', fontSize: 18 }}>
-                        Blog
+                        <strong>Blog</strong>
                     </Link>
 
                     {/* ovde cu dodam search bar za search by keyword */}
@@ -63,7 +64,10 @@ function Header() {
                         )}
                     </form>
 
-                    <nav style={{ display: 'flex', gap: 16 }}>
+                    <nav
+                        className={`nav ${open ? 'open' : ''}`}
+                        style={{ display: 'flex', gap: 16 }}
+                    >
                         <Link to="/">Home</Link>
                         {user && <Link to="/create">New Post</Link>}
 
@@ -83,6 +87,12 @@ function Header() {
                                 <Link to="/register">Register</Link>
                             </>
                         )}
+                        {/* <button
+                            className="menu-toggle"
+                            onClick={() => setOpen(!open)}
+                        >
+                            ☰
+                        </button> */}
                     </nav>
                 </div>
             </header>

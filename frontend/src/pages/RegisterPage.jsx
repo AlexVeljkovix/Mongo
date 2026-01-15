@@ -32,7 +32,10 @@ function RegisterPage() {
 
     if (success) {
         return (
-            <div className="card">
+            <div
+                className="card"
+                style={{ width: '400px', content: 'justify' }}
+            >
                 <h2 className="section-title">Registration successful</h2>
                 <p>Your account has been created.</p>
 

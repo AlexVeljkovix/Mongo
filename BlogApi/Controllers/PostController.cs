@@ -17,60 +17,6 @@ public class PostController : ControllerBase{
     }
 
     [Authorize]
-    [HttpGet("test-auth")]
-    public IActionResult TestAuth()
-    {
-        var user = HttpContext.User;
-        
-        var claims = user.Claims.Select(c => new 
-        { 
-            Type = c.Type, 
-            Value = c.Value,
-            IsNameIdentifier = c.Type == ClaimTypes.NameIdentifier,
-            IsName = c.Type == ClaimTypes.Name
-        }).ToList();
-        
-        return Ok(new
-        {
-            IsAuthenticated = user.Identity?.IsAuthenticated,
-            UserId = user.FindFirst(ClaimTypes.NameIdentifier)?.Value,
-            Username = user.FindFirst(ClaimTypes.Name)?.Value,
-            AllNameIdentifiers = user.FindAll(ClaimTypes.NameIdentifier).Select(c => c.Value).ToList(),
-            Claims = claims
-        });
-    }
-
-    [Authorize]
-    [HttpGet("debug/user")]
-    public IActionResult DebugUser()
-    {
-        var user = HttpContext.User;
-        
-        var claims = user.Claims.Select(c => new { c.Type, c.Value }).ToList();
-        
-        return Ok(new
-        {
-            IsAuthenticated = user.Identity?.IsAuthenticated,
-            UserId = user.FindFirst(ClaimTypes.NameIdentifier)?.Value,
-            Username = user.FindFirst(ClaimTypes.Name)?.Value,
-            Claims = claims
-        });
-    }
-
-    [HttpGet]
-    public async Task<IActionResult> GetAll()
-        =>Ok (await _service.GetAllAsync());
-        
-
-    [HttpGet("mine")]
-    public async Task<IActionResult> MyPosts()
-    {
-        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-        var posts = await _service.GetByAuthorAsync(userId!);
-        return Ok(posts);
-    }
-
-    [Authorize]
     [HttpPost]
     public async Task<IActionResult> Create(PostDto dto)
     {
@@ -78,6 +24,18 @@ public class PostController : ControllerBase{
         return StatusCode(201, post);
     }
 
+    [HttpGet]
+    public async Task<IActionResult> GetAll()
+        =>Ok (await _service.GetAllAsync());
+        
+    [Authorize]
+    [HttpGet("mine")]
+    public async Task<IActionResult> MyPosts()
+    {
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        var posts = await _service.GetByAuthorAsync(userId!);
+        return Ok(posts);
+    }
 
     [HttpGet("by-keyword/{keyword}")]
     public async Task<IActionResult> GetByKeyword(string keyword)
@@ -92,8 +50,6 @@ public class PostController : ControllerBase{
             return NotFound();
         return Ok(post);
     }
-
-    
 
     [Authorize]
     [HttpPut("{id}")]

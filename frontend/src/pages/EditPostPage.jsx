@@ -51,18 +51,20 @@ function EditPostPage() {
                 <h2 className="section-title">Edit Post</h2>
 
                 <form className="form" onSubmit={handleSubmit}>
+                    <label className="form-label">Title:</label>
                     <input
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
                         className="input"
                     />
-                    <br />
-
+                    <label className="form-label">Content:</label>
                     <textarea
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
+                        className="textarea-large"
+                        placeholder="Post content..."
                     />
-                    <br />
+                    <label className="form-label">Tags:</label>
                     <input
                         type="text"
                         placeholder="Tags (comma separated)"

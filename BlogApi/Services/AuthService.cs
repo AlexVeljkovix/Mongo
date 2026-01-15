@@ -65,7 +65,7 @@ public class AuthService
 
     }
 
-    public string GenerateJwt(User user)
+    private string GenerateJwt(User user)
     {
         var claims = new[]
         {

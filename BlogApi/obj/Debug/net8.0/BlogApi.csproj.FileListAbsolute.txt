@@ -46,3 +46,57 @@ E:\Faks\QUATORDICI\NAPREDNE BAZE\Projekti\Mongodb\BlogApi\obj\Debug\net8.0\refin
 E:\Faks\QUATORDICI\NAPREDNE BAZE\Projekti\Mongodb\BlogApi\obj\Debug\net8.0\BlogApi.pdb
 E:\Faks\QUATORDICI\NAPREDNE BAZE\Projekti\Mongodb\BlogApi\obj\Debug\net8.0\BlogApi.genruntimeconfig.cache
 E:\Faks\QUATORDICI\NAPREDNE BAZE\Projekti\Mongodb\BlogApi\obj\Debug\net8.0\ref\BlogApi.dll
+E:\Faks\QUATORDICI\NAPREDNE BAZE\Projekti\Mongodb\BlogApi\obj\Debug\net8.0\BlogApi.sourcelink.json
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\appsettings.Development.json
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\appsettings.json
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\package-lock.json
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\BlogApi.staticwebassets.endpoints.json
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\BlogApi.exe
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\BlogApi.deps.json
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\BlogApi.runtimeconfig.json
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\BlogApi.dll
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\BlogApi.pdb
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\BCrypt.Net-Next.dll
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\DnsClient.dll
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\MongoDB.Bson.dll
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\MongoDB.Driver.dll
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\SharpCompress.dll
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\Snappier.dll
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\bin\Debug\net8.0\ZstdSharp.dll
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\obj\Debug\net8.0\BlogApi.csproj.AssemblyReference.cache
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\obj\Debug\net8.0\BlogApi.GeneratedMSBuildEditorConfig.editorconfig
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\obj\Debug\net8.0\BlogApi.AssemblyInfoInputs.cache
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\obj\Debug\net8.0\BlogApi.AssemblyInfo.cs
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\obj\Debug\net8.0\BlogApi.csproj.CoreCompileInputs.cache
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\obj\Debug\net8.0\BlogApi.MvcApplicationPartsAssemblyInfo.cs
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\obj\Debug\net8.0\BlogApi.MvcApplicationPartsAssemblyInfo.cache
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\obj\Debug\net8.0\BlogApi.sourcelink.json
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\obj\Debug\net8.0\scopedcss\bundle\BlogApi.styles.css
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\obj\Debug\net8.0\staticwebassets.build.json
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\obj\Debug\net8.0\staticwebassets.development.json
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\obj\Debug\net8.0\swae.build.ex.cache
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\obj\Debug\net8.0\BlogApi.csproj.Up2Date
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\obj\Debug\net8.0\BlogApi.dll
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\obj\Debug\net8.0\refint\BlogApi.dll
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\obj\Debug\net8.0\BlogApi.pdb
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\obj\Debug\net8.0\BlogApi.genruntimeconfig.cache
+D:\Fakultet\IV Godina\Napredne baze podataka\Projekti\Mongo\BlogApi\obj\Debug\net8.0\ref\BlogApi.dll

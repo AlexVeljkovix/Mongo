@@ -23,14 +23,16 @@ function PostDetails() {
     if (!post) return <p>Loading...</p>
 
     return (
-        <div style={{ padding: 20 }}>
-            <h1>{post.title}</h1>
-            <p>{post.content}</p>
+        <div className="page">
+            <div className="profile-container">
+                <h1>{post.title}</h1>
+                <p>{post.content}</p>
 
-            <hr />
-            <section ref={commentsRef} id="comments">
-                <CommentSection postId={post.id} />
-            </section>
+                <hr />
+                <section ref={commentsRef} id="comments">
+                    <CommentSection postId={post.id} />
+                </section>
+            </div>
         </div>
     )
 }

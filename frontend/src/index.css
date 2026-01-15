@@ -6,7 +6,7 @@ body {
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
         Roboto, sans-serif;
-    background-color: #f7f7f8;
+    background-color: #f4f5f7;
     color: #222;
 }
 
@@ -30,11 +30,19 @@ main {
     flex: 1;
 }
 
+/* =====================
+   LAYOUT
+   ===================== */
+
 .container {
-    max-width: 900px;
+    max-width: 760px;
     margin: 0 auto;
-    padding: 24px 16px;
+    padding: 32px 16px;
 }
+
+/* =====================
+   HEADINGS
+   ===================== */
 
 h1,
 h2,
@@ -44,25 +52,35 @@ h4 {
 }
 
 .section-title {
-    margin-bottom: 16px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 8px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 10px;
 }
+
+/* =====================
+   CARD
+   ===================== */
 
 .card {
     background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 16px;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
 }
 
+/* =====================
+   BUTTONS
+   ===================== */
+
 .btn {
-    padding: 8px 14px;
+    padding: 8px 16px;
     border-radius: 6px;
     border: 1px solid transparent;
     font-size: 14px;
-    margin: 5px;
+    margin: 4px 6px 4px 0;
+    min-height: 36px;
 }
 
 .btn-primary {
@@ -77,6 +95,10 @@ h4 {
 .btn-secondary {
     background: #e5e7eb;
     color: #111;
+}
+
+.btn-secondary:hover {
+    background: #d1d5db;
 }
 
 .btn-danger {
@@ -95,19 +117,30 @@ h4 {
     padding: 0;
 }
 
+/* =====================
+   FORMS
+   ===================== */
+
 .form {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
 }
 
 .input,
 .textarea {
     width: 100%;
-    padding: 10px;
+    padding: 10px 12px;
     font-size: 14px;
     border-radius: 6px;
     border: 1px solid #ccc;
+    background: #fff;
+}
+
+.input:focus,
+.textarea:focus {
+    outline: none;
+    border-color: #2563eb;
 }
 
 .textarea {
@@ -115,11 +148,14 @@ h4 {
     min-height: 120px;
 }
 
+/* =====================
+   COMMENTS
+   ===================== */
+
 .comment {
     border-top: 1px solid #eee;
-    padding-top: 12px;
-    margin-top: 12px;
-    margin-bottom: 12px;
+    padding-top: 14px;
+    margin-top: 14px;
 }
 
 .comment-author {
@@ -129,7 +165,12 @@ h4 {
 .comment-date {
     font-size: 12px;
     color: #666;
+    padding-bottom: 20px;
 }
+
+/* =====================
+   HEADER / FOOTER
+   ===================== */
 
 header {
     background: #fff;
@@ -157,5 +198,135 @@ footer {
     padding: 16px;
     font-size: 14px;
     color: #888;
+    background: #fafafa;
+}
+
+.textarea-large {
+    width: 100%;
+    min-height: 200px;
+    padding: 12px;
+    font-size: 15px;
+    line-height: 1.5;
+    resize: vertical;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.form-label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+.page {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-container {
+    width: 100%;
+    max-width: 900px;
+}
+.profile-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.profile-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.label {
+    display: block;
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 4px;
+}
+.item-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.item-card h4 {
+    margin: 0 0 10px;
+}
+.actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+}
+.section-title {
+    margin: 40px 0 15px;
+    font-size: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 6px;
+}
+.profile-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+.profile-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+.profile-columns section {
+    display: flex;
+    flex-direction: column;
+}
+.profile-columns section {
+    align-self: start;
+}
+.profile-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+@media (max-width: 900px) {
+    .profile-columns {
+        grid-template-columns: 1fr;
+    }
+}
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+}
+@media (max-width: 768px) {
+    .header-inner {
+        flex-wrap: wrap;
+    }
+
+    .nav {
+        width: 100%;
+        flex-direction: column;
+        gap: 12px;
+        display: none;
+        margin-top: 16px;
+    }
+
+    .nav.open {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
 }
 

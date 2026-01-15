@@ -11,11 +11,11 @@ public class UserRepo
     {
         _users = context.GetCollection<User>("users");
     }
-    public Task<User> GetByEmailAsync(string email)
-    => _users.Find(u => u.Email == email).FirstOrDefaultAsync();
-    public Task<User> GetByIdAsync(string id) 
-    => _users.Find(u => u.Id == id).FirstOrDefaultAsync();
+    public async Task<User> GetByEmailAsync(string email)
+    => await _users.Find(u => u.Email == email).FirstOrDefaultAsync();
+    public async Task<User> GetByIdAsync(string id) 
+    => await _users.Find(u => u.Id == id).FirstOrDefaultAsync();
 
-    public Task CreateAsync(User user)
-    => _users.InsertOneAsync(user);
+    public async Task CreateAsync(User user)
+    => await _users.InsertOneAsync(user);
 }

@@ -166,14 +166,6 @@ function CreatePostPage() {
                             type="submit"
                             disabled={loading}
                             className="btn btn-primary"
-                            onMouseOver={(e) => {
-                                if (!loading)
-                                    e.target.style.backgroundColor = '#218838'
-                            }}
-                            onMouseOut={(e) => {
-                                if (!loading)
-                                    e.target.style.backgroundColor = '#28a745'
-                            }}
                         >
                             {loading ? (
                                 <>

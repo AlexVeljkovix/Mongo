@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Faks\\QUATORDICI\\NAPREDNE BAZE\\Projekti\\Mongodb\\BlogApi\\BlogApi.csproj": {}
+    "D:\\Fakultet\\IV Godina\\Napredne baze podataka\\Projekti\\Mongo\\BlogApi\\BlogApi.csproj": {}
   },
   "projects": {
-    "E:\\Faks\\QUATORDICI\\NAPREDNE BAZE\\Projekti\\Mongodb\\BlogApi\\BlogApi.csproj": {
+    "D:\\Fakultet\\IV Godina\\Napredne baze podataka\\Projekti\\Mongo\\BlogApi\\BlogApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Faks\\QUATORDICI\\NAPREDNE BAZE\\Projekti\\Mongodb\\BlogApi\\BlogApi.csproj",
+        "projectUniqueName": "D:\\Fakultet\\IV Godina\\Napredne baze podataka\\Projekti\\Mongo\\BlogApi\\BlogApi.csproj",
         "projectName": "BlogApi",
-        "projectPath": "E:\\Faks\\QUATORDICI\\NAPREDNE BAZE\\Projekti\\Mongodb\\BlogApi\\BlogApi.csproj",
-        "packagesPath": "C:\\Users\\Mladen\\.nuget\\packages\\",
-        "outputPath": "E:\\Faks\\QUATORDICI\\NAPREDNE BAZE\\Projekti\\Mongodb\\BlogApi\\obj\\",
+        "projectPath": "D:\\Fakultet\\IV Godina\\Napredne baze podataka\\Projekti\\Mongo\\BlogApi\\BlogApi.csproj",
+        "packagesPath": "C:\\Users\\aleks\\.nuget\\packages\\",
+        "outputPath": "D:\\Fakultet\\IV Godina\\Napredne baze podataka\\Projekti\\Mongo\\BlogApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Visual studio\\New folder (3)\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Mladen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\aleks\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,7 +44,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -90,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

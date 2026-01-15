@@ -1,6 +1,5 @@
 using BlogApi.Models;
 using BlogApi.Repos;
-using MongoDB.Bson;
 using BlogApi.DTOs;
 using System.Security.Claims;
 
@@ -11,18 +10,12 @@ public class PostService{
     private readonly PostRepo _posts;
     private readonly CommentRepo _comments;
     private readonly IHttpContextAccessor _httpContextAccessor;
-    private readonly UserRepo _userRepo;
 
-    public PostService (PostRepo posts, CommentRepo comments, IHttpContextAccessor httpContextAccessor, UserRepo userRepo){
+    public PostService (PostRepo posts, CommentRepo comments, IHttpContextAccessor httpContextAccessor, UserRepo users){
         _posts = posts;
         _comments = comments;
         _httpContextAccessor = httpContextAccessor;
-        _userRepo = userRepo;
     }
-
-    public Task<List<Post>> GetAllAsync()
-        => _posts.GetAllAsync();
-
 
     public async Task<Post> CreateAsync(PostDto dto)
     {
@@ -51,6 +44,9 @@ public class PostService{
         return post;
     }
 
+    public Task<List<Post>> GetAllAsync()
+        => _posts.GetAllAsync();
+
 
     public Task<List<Post>> GetByKeywordAsync(string keyword)
         => _posts.GetByKeywordAsync(keyword);
@@ -59,8 +55,12 @@ public class PostService{
     public async Task<Post?> GetByIdAsync(string id)
     {
         return await _posts.GetByIdAsync(id);
+    }    
+
+    public async Task<List<Post>> GetByAuthorAsync(string authorId)
+    {
+        return await _posts.GetByAuthorAsync(authorId);
     }
-    
 
     public async Task UpdatePostAsync(
         string postId,
@@ -98,14 +98,12 @@ public class PostService{
             throw new UnauthorizedAccessException("Not your post");
         }
 
+        var comments = await _comments.GetCommentsByPostIdAsync(postId);
+        foreach(var com in comments)
+        {
+            await _comments.DeleteAsync(com.Id!);
+        }
+
         await _posts.DeleteAsync(postId);
     }
-
-    public async Task<List<Post>> GetByAuthorAsync(string authorId)
-    {
-        return await _posts.GetByAuthorAsync(authorId);
-    }
-
-
-
 }

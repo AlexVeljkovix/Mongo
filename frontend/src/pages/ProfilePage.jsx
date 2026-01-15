@@ -20,8 +20,8 @@ function ProfilePage() {
         await apiFetch(`http://localhost:5194/api/posts/${id}`, {
             method: 'DELETE',
         })
-
-        setPosts(posts.filter((p) => p.id !== id))
+        setPosts((prev) => prev.filter((p) => p.id !== id))
+        setComments((prev) => prev.filter((c) => c.postId !== id))
     }
 
     async function handleDeleteComment(id) {
@@ -35,93 +35,106 @@ function ProfilePage() {
     }
 
     return (
-        <div style={{ padding: 20 }}>
-            <div style={{ padding: 20 }}>
-                <h2>Profile</h2>
+        <div className="page">
+            <div className="profile-container">
+                <div className="profile-card">
+                    <h2>Profile</h2>
 
-                <p>
-                    <b>Username:</b> {user.userName}
-                </p>
-                <p>
-                    <b>Email:</b> {user.email}
-                </p>
-
-                <h3>My posts</h3>
-
-                {posts.map((post) => (
-                    <div
-                        key={post.id}
-                        style={{
-                            border: '1px solid #ccc',
-                            padding: 10,
-                            marginBottom: 10,
-                        }}
-                    >
-                        <h4>{post.title}</h4>
-
-                        <button
-                            className="btn btn-primary"
-                            onClick={() => navigate(`/posts/${post.id}`)}
-                        >
-                            Open
-                        </button>
-
-                        <button
-                            className="btn btn-primary"
-                            onClick={() => navigate(`/posts/edit/${post.id}`)}
-                        >
-                            Edit
-                        </button>
-
-                        <button
-                            className="btn btn-primary"
-                            onClick={() => handleDelete(post.id)}
-                        >
-                            Delete
-                        </button>
+                    <div className="profile-info">
+                        <div>
+                            <span className="label">Username</span>
+                            <span>{user.username}</span>
+                        </div>
+                        <div>
+                            <span className="label">Email</span>
+                            <span>{user.email}</span>
+                        </div>
                     </div>
-                ))}
-                <h3>My comments</h3>
+                </div>
 
-                {comments.map((c) => (
-                    <div
-                        key={c.id}
-                        style={{
-                            border: '1px solid #ddd',
-                            padding: 10,
-                            marginBottom: 10,
-                        }}
-                    >
-                        <p>
-                            On post: <b>{c.postTitle}</b>
-                        </p>
+                <div className="profile-columns">
+                    <section>
+                        <h3 className="section-title">My posts</h3>
 
-                        <p>{c.content}</p>
+                        {posts.map((post) => (
+                            <div key={post.id} className="item-card">
+                                <h4>{post.title}</h4>
 
-                        <button
-                            className="btn btn-primary"
-                            onClick={() =>
-                                navigate(`/posts/${c.postId}?comment=${c.id}`)
-                            }
-                        >
-                            Open
-                        </button>
+                                <div className="actions">
+                                    <button
+                                        className="btn btn-primary"
+                                        onClick={() =>
+                                            navigate(`/posts/${post.id}`)
+                                        }
+                                    >
+                                        Open
+                                    </button>
 
-                        <button
-                            className="btn btn-primary"
-                            onClick={() => navigate(`/comments/edit/${c.id}`)}
-                        >
-                            Edit
-                        </button>
+                                    <button
+                                        className="btn btn-secondary"
+                                        onClick={() =>
+                                            navigate(`/posts/edit/${post.id}`)
+                                        }
+                                    >
+                                        Edit
+                                    </button>
 
-                        <button
-                            className="btn btn-primary"
-                            onClick={() => handleDeleteComment(c.id)}
-                        >
-                            Delete
-                        </button>
-                    </div>
-                ))}
+                                    <button
+                                        className="btn btn-danger"
+                                        onClick={() => handleDelete(post.id)}
+                                    >
+                                        Delete
+                                    </button>
+                                </div>
+                            </div>
+                        ))}
+                    </section>
+
+                    <section>
+                        <h3 className="section-title">My comments</h3>
+
+                        {comments.map((c) => (
+                            <div key={c.id} className="item-card">
+                                <p>
+                                    On post: <b>{c.postTitle}</b>
+                                </p>
+
+                                <p>{c.content}</p>
+
+                                <div className="actions">
+                                    <button
+                                        className="btn btn-primary"
+                                        onClick={() =>
+                                            navigate(
+                                                `/posts/${c.postId}?comment=${c.id}`
+                                            )
+                                        }
+                                    >
+                                        Open
+                                    </button>
+
+                                    <button
+                                        className="btn btn-secondary"
+                                        onClick={() =>
+                                            navigate(`/comments/edit/${c.id}`)
+                                        }
+                                    >
+                                        Edit
+                                    </button>
+
+                                    <button
+                                        className="btn btn-danger"
+                                        onClick={() =>
+                                            handleDeleteComment(c.id)
+                                        }
+                                    >
+                                        Delete
+                                    </button>
+                                </div>
+                            </div>
+                        ))}
+                    </section>
+                </div>
             </div>
         </div>
     )

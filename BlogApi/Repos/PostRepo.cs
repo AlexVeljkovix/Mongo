@@ -16,18 +16,18 @@ public class PostRepo{
         _posts.Indexes.CreateOne( new CreateIndexModel<Post>(tagIndex));
 
     }
+    
+    public async Task<Post> CreateAsync (Post post)
+    {
+        await _posts.InsertOneAsync(post);
+        return post;
+    }
 
     public async Task<List<Post>> GetAllAsync()
         => await _posts
             .Find(_ => true)
             .SortByDescending(p=>p.CreatedAt)
             .ToListAsync();
-
-    public async Task<Post> CreateAsync (Post post)
-    {
-        await _posts.InsertOneAsync(post);
-        return post;
-    }
 
     public async Task<List<Post>> GetByKeywordAsync(string keyword)
     {
@@ -45,7 +45,6 @@ public class PostRepo{
             .ToListAsync();
     }
 
-
     public async Task<Post?> GetByIdAsync(string id)
     {
         return await _posts
@@ -53,22 +52,8 @@ public class PostRepo{
             .FirstOrDefaultAsync();
     }
 
-
-    public async Task<bool> UpdatePostAsync (string id, string title, string content, List<string> tags)
-    {
-        var update = Builders<Post>.Update
-            .Set(p=>p.Title, title)
-            .Set(p=>p.Content, content)
-            .Set(p=>p.Tags,tags)
-            .Set(p=>p.UpdatedAt, DateTime.UtcNow);
-
-        var result = await _posts.UpdateOneAsync(
-            p => p.Id == id,
-            update
-        );
-
-        return result.MatchedCount > 0;
-    }
+    public async Task<List<Post>> GetByAuthorAsync(string authorId)
+    => await _posts.Find(p => p.AuthorId == authorId).ToListAsync();
 
     public async Task IncrementCommentsCount (string postId, int value = 1)
     {
@@ -80,18 +65,14 @@ public class PostRepo{
             filter, 
             update
         );
-
     }
+
+    public async Task UpdateAsync(Post post)
+    => await _posts.ReplaceOneAsync(p => p.Id == post.Id, post);
 
     public async Task<bool> DeleteAsync(string id)
     {
         var result = await _posts.DeleteOneAsync(p => p.Id == id);
         return result.DeletedCount > 0;
     }
-
-    public async Task UpdateAsync(Post post)
-    => await _posts.ReplaceOneAsync(p => p.Id == post.Id, post);
-
-    public async Task<List<Post>> GetByAuthorAsync(string authorId)
-    => await _posts.Find(p => p.AuthorId == authorId).ToListAsync();
 }

@@ -37,9 +37,6 @@ public class CommentRepo
         return await _comments.Find(c => c.Id == id).FirstOrDefaultAsync();
     }
 
-    public Task DeleteCommentAsync(string id)
-        =>  _comments.DeleteOneAsync(c => c.Id == id);
-
     public async Task<bool> DeleteAsync(string id)
     {
         var result = await _comments.DeleteOneAsync(c => c.Id == id);

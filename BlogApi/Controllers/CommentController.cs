@@ -37,6 +37,32 @@ public class CommentController : ControllerBase
         return Ok();
     }
 
+    [HttpGet("by-post/{postId}")]
+    public async Task<IActionResult> GetByPostId(string postId)
+    {
+        var comments = await _service.GetByPostIdAsync(postId);
+        return Ok(comments);
+    }
+
+    [HttpGet("by-id/{commentId}")]
+    public async Task<IActionResult> GetById(string commentId)
+    {
+        var comment = await _service.GetByCommentIdAsync(commentId);
+        if (comment == null) return NotFound();
+        return Ok(comment);
+    }
+
+    [Authorize]
+    [HttpGet("mine")]
+    public async Task<IActionResult> MyComments()
+    {
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (userId == null) return Unauthorized();
+
+        var comments = await _service.GetByAuthorIdAsync(userId);
+        return Ok(comments);
+    }
+
     [Authorize]
     [HttpPut("{commentId}")]
     public async Task<IActionResult> Update(
@@ -57,7 +83,6 @@ public class CommentController : ControllerBase
 
         return NoContent();
     }
-
     
     [Authorize]
     [HttpDelete("{commentId}")]
@@ -77,36 +102,4 @@ public class CommentController : ControllerBase
             return Forbid();
         }
     }
-
-
-    
-
-    [HttpGet("by-post/{postId}")]
-    public async Task<IActionResult> GetByPostId(string postId)
-    {
-        var comments = await _service.GetByPostIdAsync(postId);
-        return Ok(comments);
-    }
-
-    [Authorize]
-    [HttpGet("by-id/{commentId}")]
-    public async Task<IActionResult> GetById(string commentId)
-    {
-        var comment = await _service.GetByCommentIdAsync(commentId);
-        if (comment == null) return NotFound();
-        return Ok(comment);
-    }
-
-
-    [Authorize]
-    [HttpGet("mine")]
-    public async Task<IActionResult> MyComments()
-    {
-        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-        if (userId == null) return Unauthorized();
-
-        var comments = await _service.GetByAuthorIdASync(userId);
-        return Ok(comments);
-    }
-
 }

@@ -13,7 +13,6 @@ public class Post{
 
     public List<string> Tags {get; set;} = new();
 
-
     public int CommentsCount {get; set;} = 0;
     
     public DateTime CreatedAt {get; set;} = DateTime.UtcNow;
